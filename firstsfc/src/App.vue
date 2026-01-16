@@ -3,6 +3,7 @@
   <food-item/>
   <food-item2/>
   <food-item3/>
+  <food-item4/>
 </template>
 
 <script></script>
