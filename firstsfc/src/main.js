@@ -4,7 +4,7 @@ import App from './App.vue'
 import FoodItem from './components/FoodItem.vue'
 import FoodItem2 from './components/FoodItem2.vue'
 import FoodItem3 from './components/FoodItem3.vue'
-import FoodItem4 from './components/FoodItem.vue'
+import FoodItem4 from './components/FoodItem4.vue'
 
 const app = createApp(App)
 app.component('food-item', FoodItem)
