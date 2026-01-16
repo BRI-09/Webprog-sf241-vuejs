@@ -1,5 +1,5 @@
 <template>
-  <div class="pinapple"></div>
+  <div class="pinapple">
     <h2>{{ name }}</h2>
     <p>{{ message }}</p>
   </div>
