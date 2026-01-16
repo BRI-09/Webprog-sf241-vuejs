@@ -17,8 +17,8 @@
         <h2>About Me</h2>
         <p>Hello Everyone! I love CATS 🐱</p>
         <img 
-          src="https://www.catster.com/wp-content/uploads/beluga-Cat.webp" 
-          alt="A Beluga Cat" 
+          src="https://www.animalia-life.club/data_images/cat/cat4.jpg" 
+          alt="Cat" 
           class="profile-img"
         >
       </aside>
