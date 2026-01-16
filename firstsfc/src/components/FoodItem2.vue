@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      name: 'Pineaple and Milk',
+      name: 'Pineapple and Milk',
       message: 'Shake shake shake'
     }
   }
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style>
-    .pineaplle {
+    .pineapple {
     border: dashed rgb(12, 0, 0) 1px;
     display: inline-block;
     margin: 10px;
