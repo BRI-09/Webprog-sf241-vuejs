@@ -1,0 +1,63 @@
+/* Navigation (Flexbox) */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 1rem 0;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* Container (Sidebar + Main) */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Sidebar & Main content proportions */
+.side {
+  flex: 1 1 30%; /* Grow, Shrink, Basis */
+  min-width: 250px;
+}
+
+.main-content {
+  flex: 1 1 65%;
+  min-width: 300px;
+}
+
+/* Gallery (Flexbox version) */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  flex: 1 1 150px;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover; /* Keeps images from stretching */
+  border-radius: 8px;
+}
+
+/* Responsive: Stack sidebar and main on mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .side, .main-content {
+    flex: 1 1 100%;
+  }
+
+  .gallery-grid img {
+    max-width: 100%;
+  }
+}

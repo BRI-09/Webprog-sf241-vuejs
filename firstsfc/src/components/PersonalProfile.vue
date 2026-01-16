@@ -1,153 +1,131 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <title>Introduction - Breneth Ananayo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<template>
+  <div id="app">
+    <header>
+      <h1>{{ name }}</h1>
+      <p>Welcome to my personal profile page!</p>
+    </header>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/images.css">
-  <link rel="stylesheet" href="css/slideshow.css">
+    <nav class="navbar">
+      <a href="#about" @click.prevent="scrollTo('#about')">About</a>
+      <a href="#education" @click.prevent="scrollTo('#education')">Education</a>
+      <a href="#goals" @click.prevent="scrollTo('#goals')">Goals</a>
+      <a href="#gallery" @click.prevent="scrollTo('#gallery')">Gallery</a>
+    </nav>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <div class="container">
+      <aside class="side" id="about">
+        <h2>About Me</h2>
+        <p>Hello Everyone! I love CATS 🐱</p>
+        <img 
+          src="https://www.catster.com/wp-content/uploads/beluga-Cat.webp" 
+          alt="A Beluga Cat" 
+          class="profile-img"
+        >
+      </aside>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <span class="logo-text">BRI<span>.</span></span>
-      
-      </div>
-    
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#process">Experience</a>
-      <a href="#works">Gallery</a>
+      <main class="main-content">
+        <section id="education">
+          <h2>Education / Achievements</h2>
+          <p>Currently taking BSCS-SF in Asia Pacific College</p>
+          <p>Experience: Coding Python</p>
+        </section>
+
+        <section id="hobbies">
+          <h2>Hobbies</h2>
+          <p>Cooking, Eating, Sleeping</p>
+        </section>
+
+        <section id="goals">
+          <h2>Goals In Life</h2>
+          <ul>
+            <li v-for="(goal, index) in goals" :key="index">
+              {{ goal }}
+            </li>
+          </ul>
+        </section>
+
+        <section id="gallery">
+          <h2>Gallery</h2>
+          <div class="gallery-grid">
+            <img v-for="(img, index) in galleryImages" :key="index" :src="img" alt="Gallery item">
+          </div>
+        </section>
+      </main>
     </div>
-  </div>
-</nav>
 
-  <div class="petal p1" aria-hidden="true"><img src="svg/petal-1.png" alt=""></div>
-  <div class="petal p2" aria-hidden="true"><img src="svg/petal-2.png" alt=""></div>
-  <div class="petal p3" aria-hidden="true"><img src="svg/petal-3.png" alt=""></div>
-
-  <div class="wrap">
-
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-type">
-          <div class="kicker">Profile</div>
-          <h1 class="big-title">Breneth<br/>Ananayo</h1>
-          <div class="hero-cta">
-            <span class="pill">#educational</span>
-          </div>
-        </div>
-
-        <div class="hero-media">
-          <div class="frame">
-            <img src="assets/myself3.jpg" alt="My Profile picture">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="card-header">Me &amp; My Goals</div>
-          <div class="card-body">
-            <div class="bullet"><span class="dot"></span><div>Curious Computer Science student at Asia Pacific College who loves turning ideas into interactive experiences, coding, and caffeinated problem-solving, with a soft spot for cats.</div></div>
-            <div class="bullet"><span class="dot"></span><div>My Goal is to have a Fat CAt of my own. Also to land a role that supports me and my feline needs. Lastly pursuing a passion project—building apps or websites to help stray cats and dogs find loving homes.</div></div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">Education</div>
-          <div class="card-body">
-            <div class="bullet"><span class="dot"></span><div>Elementary: Lagawe Central School</div></div>
-            <div class="bullet"><span class="dot"></span><div>Highscool: Don Bosco (Lagawe,Ifugao)</div></div>
-            <div class="bullet"><span class="dot"></span><div>Senior High: NVGCHS</div></div>
-            <div class="bullet"><span class="dot"></span><div>College(Current): Asia Pacific College</div></div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">Hobbies</div>
-          <div class="card-body">
-            <div class="bullet"><span class="dot"></span><div>Cooking &amp; Baking</div></div>
-            <div class="bullet"><span class="dot"></span><div>Eating</div></div>
-            <div class="bullet"><span class="dot"></span><div>Sleeping</div></div>
-            <div class="bullet"><span class="dot"></span><div>Watching &amp; Playing Mobile Games</div></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="process">
-      <h2 class="section-title">IT Experience</h2>
-      <div class="grid">
-        <article class="card"><div class="card-header">1. Python</div><div class="card-body"><p>I can do the basics</p></div></article>
-        <article class="card"><div class="card-header">2. HTML</div><div class="card-body"><p>Still learning this language</p></div></article>
-        <article class="card"><div class="card-header">3. CSS</div><div class="card-body"><p>Also learning it</p></div></article>
-        <article class="card"><div class="card-header">4. JavaScript</div><div class="card-body"><p>Trying to implement to my website</p></div></article>
-        <article class="card"><div class="card-header">5. Java</div><div class="card-body"><p>I can do the basics</p></div></article>
-        <article class="card"><div class="card-header">6. Linux</div><div class="card-body"><p>I can do some Linux Commands</p></div></article>
-      </div>
-
-<ul></ul>
-      <div id="app2">
-          <div class="experience-icons">
-              <img v-for="x in manyExperience" :key="x" :src="x" alt="Skill Icon">
-          </div>
-      </div>
-    </section>
-
-    <section class="section" id="works">
-      <h2 class="section-title">Gallery</h2>
-      <div class="grid">
-        <article class="card wide">
-          <div class="card-header">Random Pictures</div>
-          <div class="card-body">
-            <div class="works-slider" id="works-slider">
-              <div class="works-slider__viewport">
-                <div class="works-slider__track">
-                  <figure class="works-slide"><img src="assets/cat.jpg" alt="cat"></figure>
-                  <figure class="works-slide"><img src="assets/flowers.jpg" alt="flower"></figure>
-                  <figure class="works-slide"><img src="assets/orchid.jpg" alt="flower"></figure>
-                  <figure class="works-slide"><img src="assets/sunset.jpg" alt="Sunset"></figure>
-                  <figure class="works-slide"><img src="assets/me3.jpg" alt="Random"></figure>
-                </div>
-              </div>
-              <div class="works-slider__controls">
-                <button class="slider-btn prev" type="button" aria-label="Previous">&#10094;</button>
-                <button class="slider-btn next" type="button" aria-label="Next">&#10095;</button>
-              </div>
-              <div class="works-slider__dots" role="tablist"></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">Current Interest</div>
-          <div class="card-body">
-            <div class="shot"><img src="assets/crochet.jpg" alt="hobby"></div>
-            <div class="shot"><img src="assets/saiki.jpg" alt="anime"></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <footer class="footer">
-      © 2026 Designer • Contact: bpananayo@student.apc.edu.ph<br>
-      Debug and Structure • Reference: AI<br>
-      Inspiration • M Akkira <br>
+    <footer>
+      <p>Contact: {{ email }} | © 2025 {{ name }}</p>
     </footer>
   </div>
+</template>
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="js/images.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+<script setup>
+import { ref } from 'vue';
+
+// Data properties
+const name = ref('Breneth Jian Ananayo');
+const email = ref('bpananayo@student.apc.edu.ph');
+const goals = ref([
+  'Finish this course',
+  'To own a Beluga Cat'
+]);
+
+const galleryImages = ref([
+  'https://wallpapers.com/images/hd/ice-cream-pictures-93ucnuf5kr7ghmhg.jpg',
+  'https://pallensmith.com/wp-content/uploads/CookingDemo.jpg',
+  'https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg'
+]);
+
+// Methods
+const scrollTo = (selector) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+</script>
+
+<style scoped>
+/* Scoped styles ensure they don't leak to other components */
+.container {
+  display: flex; /* Defaulting to Flexbox layout as per your comment */
+  gap: 20px;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  gap: 15px;
+  background: #333;
+  padding: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+}
+</style>
