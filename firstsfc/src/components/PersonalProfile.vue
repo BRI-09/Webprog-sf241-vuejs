@@ -85,6 +85,8 @@ const scrollTo = (selector) => {
 };
 </script>
 
+@import "./personalprofile.css";
+
 <style scoped>
 /* Scoped styles ensure they don't leak to other components */
 .container {
